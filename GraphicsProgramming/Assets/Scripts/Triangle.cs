@@ -73,7 +73,7 @@ public class Triangle : MonoBehaviour
             }
             for (int l = 0; l < cubePoint.Length; l++)
             {
-                tris[i + l] = cubePoint[l];
+                tris[l] = cubePoint[l];
                 cubePoint[l] += increment;
             }
             //1,5,0, 5,4,0,   5,9,4,  9,8,4,    9,13,8, 13,12,8, 
