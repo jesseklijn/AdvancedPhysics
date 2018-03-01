@@ -50,7 +50,7 @@ MonoBehaviour:
       ambientOnly: 0
       highPrecision: 0
   screenSpaceReflection:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       reflection:
         blendType: 0
@@ -85,26 +85,26 @@ MonoBehaviour:
   eyeAdaptation:
     m_Enabled: 0
     m_Settings:
-      lowPercent: 45
-      highPercent: 95
+      lowPercent: 11.244443
+      highPercent: 61.244442
       minLuminance: -5
-      maxLuminance: 1
+      maxLuminance: 5
       keyValue: 0.25
-      dynamicKeyValue: 1
+      dynamicKeyValue: 0
       adaptationType: 0
-      speedUp: 2
+      speedUp: 5.5555555e+11
       speedDown: 1
-      logMin: -8
-      logMax: 4
+      logMin: -11
+      logMax: 8
   bloom:
     m_Enabled: 1
     m_Settings:
       bloom:
-        intensity: 0.5
+        intensity: 0.3
         threshold: 1.1
-        softKnee: 0.5
-        radius: 4
-        antiFlicker: 0
+        softKnee: 0.791
+        radius: 3.91
+        antiFlicker: 1
       lensDirt:
         texture: {fileID: 0}
         intensity: 3
@@ -281,7 +281,7 @@ MonoBehaviour:
       lut: {fileID: 0}
       contribution: 1
   chromaticAberration:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       spectralTexture: {fileID: 0}
       intensity: 0.1
@@ -293,7 +293,7 @@ MonoBehaviour:
       size: 1
       luminanceContribution: 0.8
   vignette:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       mode: 0
       color: {r: 0, g: 0, b: 0, a: 1}
