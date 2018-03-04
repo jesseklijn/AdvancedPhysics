@@ -34,7 +34,7 @@ public class IslandForming : MonoBehaviour
             float seed = Random.Range(0, .4f);
             Vector3 vertex = baseHeight[i];
             if (v < (grid.xSize + 1) + (grid.zSize + 1) / 2)
-                vertex.y += 1d + Mathf.PerlinNoise(baseHeight[i].x + noiseWalk, baseHeight[i].y) + seed;
+                vertex.y += 1f + Mathf.PerlinNoise(baseHeight[i].x + noiseWalk, baseHeight[i].y) + seed;
             vertices[i] = vertex;
         }
         mesh.vertices = vertices;

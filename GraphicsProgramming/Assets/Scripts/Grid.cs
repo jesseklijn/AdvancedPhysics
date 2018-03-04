@@ -10,20 +10,20 @@ public class Grid : MonoBehaviour
     public int xSize, zSize;
     private Vector3[] vertices;
     private Mesh mesh;
+
+
     private Vector2[] uv;
+
+
     public GameObject prefab;
     public Transform parent;
 
     private void OnDrawGizmos()
     {
-        if (vertices == null)
-        {
-            return;
-        }
+        if (vertices == null) { return; } //Make sure they are only called if vertices are not null
         for (int i = 0; i < vertices.Length; i++)
         {
             Gizmos.DrawSphere(new Vector3(vertices[i].x + transform.position.x, vertices[i].y + transform.position.y, vertices[i].z + transform.position.z), 0.05F);
-
         }
 
     }
@@ -55,9 +55,6 @@ public class Grid : MonoBehaviour
 
     private IEnumerator Generate()
     {
-        //Create the mesh and give it a name
-        GetComponent<MeshFilter>().mesh = mesh = new Mesh();
-        mesh.name = "Procedural Grid";
 
         //Initialize the vertices according to the size of the grid board (having a minimum of 1x1)
         vertices = new Vector3[(xSize + 1) * (zSize + 1)];
@@ -116,7 +113,7 @@ public class Grid : MonoBehaviour
 
     private void Update()
     {
-        
+
     }
 
 }
