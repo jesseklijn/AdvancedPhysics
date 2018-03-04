@@ -3,29 +3,41 @@ using System.Collections;
 
 public class WaveGen : MonoBehaviour
 {
-    public float scale = 0.1f;
-    public float speed = 1.0f;
-    public float noiseStrength = 1f;
-    public float noiseWalk = 1f;
+    public float scaleHeightDifference = 0.1f;
+    public float waveSpeed = 1.0f;
 
-    private Vector3[] baseHeight;
+    private Vector3[] baseVertices;
+    Vector3[] newVertices;
+    private Mesh mesh;
+
+    private void Start()
+    {
+        //Get the Mesh
+        mesh = GetComponent<MeshFilter>().mesh;
+        //Put mesh vertices into our modifiable vertices
+        baseVertices = mesh.vertices;
+        //Assign the length of the vertices
+        newVertices = new Vector3[baseVertices.Length];
+    }
+
 
     void Update()
     {
-        Mesh mesh = GetComponent<MeshFilter>().mesh;
-
-        if (baseHeight == null)
-            baseHeight = mesh.vertices;
-
-        Vector3[] vertices = new Vector3[baseHeight.Length];
-        for (int i = 0; i < vertices.Length; i++)
+        for (int i = 0; i < newVertices.Length; i++)
         {
-            Vector3 vertex = baseHeight[i];
-            vertex.y += Mathf.Sin(Time.time * speed + baseHeight[i].x + baseHeight[i].y + baseHeight[i].z) * scale;
-            vertex.y += Mathf.PerlinNoise(baseHeight[i].x + noiseWalk, baseHeight[i].y + Mathf.Sin(Time.time * 0.1f)) * noiseStrength;
-            vertices[i] = vertex;
+            //Get old vertex, put it in the new sample vertex
+            Vector3 sampleVertex = baseVertices[i];
+            //Modify the y value of the sample vertex
+            sampleVertex.y += Mathf.Sin(Time.time * waveSpeed + baseVertices[i].x + baseVertices[i].y + baseVertices[i].z) * scaleHeightDifference;
+
+            //Assign it to the new collection
+            newVertices[i] = sampleVertex;
         }
-        mesh.vertices = vertices;
+
+        //Assign the new vertices into the old vertices of the mesh
+        mesh.vertices = newVertices;
+
+        //Calculate normals
         mesh.RecalculateNormals();
     }
 }

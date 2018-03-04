@@ -44,13 +44,13 @@ public class Grid : MonoBehaviour
 
         //Enable for debugging purposes
         //for (int i = 0; i < vertices.Length; i++)
-        //    {
+        //{
 
-        //        GameObject text = Instantiate(prefab, new Vector3(vertices[i].x + transform.position.x, vertices[i].y + transform.position.y, vertices[i].z + transform.position.z), Quaternion.identity, parent);
-        //        text.GetComponent<TextMesh>().text = i.ToString();
-        //        text.transform.Rotate(90, 0, 0);
-        //        text.transform.position = new Vector3(text.transform.position.x, text.transform.position.y + 0.2F, text.transform.position.z);
-        //    }
+        //    GameObject text = Instantiate(prefab, new Vector3(vertices[i].x + transform.position.x, vertices[i].y + transform.position.y, vertices[i].z + transform.position.z), Quaternion.identity, parent);
+        //    text.GetComponent<TextMesh>().text = i.ToString();
+        //    text.transform.Rotate(90, 0, 0);
+        //    text.transform.position = new Vector3(text.transform.position.x, text.transform.position.y + 0.2F, text.transform.position.z);
+        //}
     }
 
     private IEnumerator Generate()

@@ -276,8 +276,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a355314d0081a3e429cc9a08b56bf7fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSize: 10
-  zSize: 10
+  xSize: 50
+  zSize: 50
   prefab: {fileID: 1238431263091416, guid: 3fd90317a9cfcc8489bb0bdd58f59420, type: 2}
   parent: {fileID: 1109551527}
 --- !u!4 &501857107
@@ -300,15 +300,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 501857103}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 246d33c87fefbfc4ca1ac37db90f9501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scale: 0.1
-  speed: 3
-  noiseStrength: 1
-  noiseWalk: 1
+  scaleHeightDifference: 0.1
+  waveSpeed: 3
 --- !u!1 &1109551526
 GameObject:
   m_ObjectHideFlags: 0
